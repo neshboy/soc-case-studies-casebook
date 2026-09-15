@@ -1,6 +1,6 @@
 ---
 title: "CB-15 — Two Weeks' Notice"
-case_id: "CB15"
+case_id: "CB-15"
 category: "Insider"
 disposition: "True Positive"
 outcome_flavor: "Obvious"

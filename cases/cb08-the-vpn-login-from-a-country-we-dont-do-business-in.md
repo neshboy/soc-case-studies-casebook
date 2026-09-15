@@ -1,6 +1,6 @@
 ---
 title: "CB-08 — The VPN Login From a Country We Don't Do Business In"
-case_id: "CB08"
+case_id: "CB-08"
 category: "Network"
 disposition: "True Positive"
 outcome_flavor: "Subtle"

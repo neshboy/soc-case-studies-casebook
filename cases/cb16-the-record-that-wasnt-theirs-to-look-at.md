@@ -1,6 +1,6 @@
 ---
 title: "CB-16 — The Record That Wasn't Theirs to Look At"
-case_id: "CB16"
+case_id: "CB-16"
 category: "Insider"
 disposition: "True Positive"
 outcome_flavor: "Subtle"

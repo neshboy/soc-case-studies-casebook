@@ -1,6 +1,6 @@
 ---
 title: "CB-19 — Suspicious, Legitimate, and Still Worth a Policy Change"
-case_id: "CB19"
+case_id: "CB-19"
 category: "Ambiguous / False-Positive"
 disposition: "Benign Positive"
 outcome_flavor: "Benign"

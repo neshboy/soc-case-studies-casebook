@@ -1,6 +1,6 @@
 ---
 title: "CB-10 — Two Rules, One Wire Transfer"
-case_id: "CB10"
+case_id: "CB-10"
 category: "Web / Email"
 disposition: "True Positive"
 outcome_flavor: "Subtle"

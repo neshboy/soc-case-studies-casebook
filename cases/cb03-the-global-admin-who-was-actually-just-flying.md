@@ -1,6 +1,6 @@
 ---
 title: "CB-03 — The Global Admin Who Was Actually Just Flying"
-case_id: "CB03"
+case_id: "CB-03"
 category: "Identity"
 disposition: "Insufficient Evidence"
 outcome_flavor: "Inconclusive"

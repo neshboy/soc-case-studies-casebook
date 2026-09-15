@@ -1,6 +1,6 @@
 ---
 title: "CB-09 — The Port Scan That Was Us"
-case_id: "CB09"
+case_id: "CB-09"
 category: "Network"
 disposition: "Benign Positive"
 outcome_flavor: "False Positive"

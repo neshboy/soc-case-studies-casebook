@@ -1,6 +1,6 @@
 ---
 title: "CB-14 — The Agent That Read the Wrong File"
-case_id: "CB14"
+case_id: "CB-14"
 category: "Cloud"
 disposition: "True Positive"
 outcome_flavor: "Obvious"

@@ -1,6 +1,6 @@
 ---
 title: "CB-11 — The Web Shell Behind the Marketing Site"
-case_id: "CB11"
+case_id: "CB-11"
 category: "Web / Email"
 disposition: "True Positive"
 outcome_flavor: "Obvious"

@@ -1,6 +1,6 @@
 ---
 title: "CB-02 — Two Alerts, One Identity"
-case_id: "CB02"
+case_id: "CB-02"
 category: "Identity"
 disposition: "True Positive"
 outcome_flavor: "Subtle"

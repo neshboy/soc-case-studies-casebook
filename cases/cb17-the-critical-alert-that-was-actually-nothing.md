@@ -1,6 +1,6 @@
 ---
 title: "CB-17 — The Critical Alert That Was Actually Nothing"
-case_id: "CB17"
+case_id: "CB-17"
 category: "Ambiguous / False-Positive"
 disposition: "Benign Positive"
 outcome_flavor: "False Positive"

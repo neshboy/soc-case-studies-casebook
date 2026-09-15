@@ -1,6 +1,6 @@
 ---
 title: "CB-06 — The Miner That Wasn't a Miner"
-case_id: "CB06"
+case_id: "CB-06"
 category: "Endpoint"
 disposition: "Benign Positive"
 outcome_flavor: "Benign"

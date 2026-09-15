@@ -1,6 +1,6 @@
 ---
 title: "CB-04 — Encoded, But Not by SCCM"
-case_id: "CB04"
+case_id: "CB-04"
 category: "Endpoint"
 disposition: "True Positive"
 outcome_flavor: "Obvious"

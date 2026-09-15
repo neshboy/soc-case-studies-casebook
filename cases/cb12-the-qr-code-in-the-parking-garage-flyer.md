@@ -1,6 +1,6 @@
 ---
 title: "CB-12 — The QR Code in the Parking Garage Flyer"
-case_id: "CB12"
+case_id: "CB-12"
 category: "Web / Email"
 disposition: "True Positive"
 outcome_flavor: "Subtle"
