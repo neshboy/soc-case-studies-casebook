@@ -82,7 +82,7 @@ made after a tabletop exercise concluded that an unauthorized Domain Admins add 
 the few findings where minutes, not an hour, could matter. On 2026-08-16, a Sunday, at 14:04
 UTC, it fired.
 
-```
+```text
 // Domain controller Security event log, BH-DC02
 2026-08-16T14:03:47Z EventID=4728 TargetGroup="Domain Admins" TargetGroupSid=S-1-5-21-...-512
   TargetAccount=m.tran-adm SubjectAccount=g.ilupeju-adm SubjectLogonId=0x3F2A9C1
@@ -135,7 +135,7 @@ about whether anyone with the authority to approve this ever actually did.
 anything slower was to check where the technical action came from and whether that lined up
 with how Grace was supposed to be working that day.
 
-```
+```text
 // preceding logon, BH-DC02, correlated by SubjectLogonId 0x3F2A9C1
 2026-08-16T14:02:58Z EventID=4624 LogonType=3 TargetAccount=g.ilupeju-adm
   SourceIP=192.0.2.9 AuthenticationPackage=Kerberos MFA=SmartcardRequired:True
@@ -188,7 +188,7 @@ before letting the clean-looking device and calendar match quietly become the an
 identity — the target account's owner, not the actor — on the theory that if this were a
 coordinated compromise, some sign of it should show up on both ends, not just the actor's.
 
-```
+```text
 // Entra conditional-access sign-in log, m.tran (standard account, not m.tran-adm)
 2026-08-16T12:53:47Z result=Failure reason="Device not compliant" sourceIP=203.0.113.58
   location=Regional-Airport-Hotel-WiFi app=CertMonitoringDashboard
@@ -220,7 +220,7 @@ was complete.
 
 Owen's first search used the obvious term:
 
-```
+```text
 // too broad — see next query
 ChangeGuard search: text contains "Domain Admins", opened within last 24h
 → 0 results
@@ -236,7 +236,7 @@ the wrong vocabulary was never going to find a ticket that used a different one.
 
 Searching by target account and record type instead of free text found it in under a minute.
 
-```
+```text
 ChangeGuard search: target_account="m.tran-adm" AND record_type="Emergency Change" AND
   opened_after="2026-08-16T00:00:00Z"
 → 1 result: CHG-EMG-88710

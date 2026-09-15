@@ -148,7 +148,7 @@ EDR file-access telemetry for workstation `AVL-LT-2291` showed a tight, contiguo
 
 **[PIVOT]** The Windows Security log for `AVL-LT-2291` showed a single interactive logon spanning the whole window.
 
-```
+```text
 Event ID 4624 — An account was successfully logged on
   Subject: N/A
   New Logon:
@@ -238,7 +238,7 @@ One prior event: 2026-08-19, 640 MB to the same personal Google account, entirel
 
 **[PIVOT]** Closing this out meant checking Averlyne's IT self-service ticketing system for anything Priya herself might have filed — the last log source in the case, and the one that changed its shape.
 
-```
+```text
 Ticket AVL-IT-88213
 Submitted: 2026-09-09T11:58:00Z
 Submitted by: pchandrasekhar@averlyne.example

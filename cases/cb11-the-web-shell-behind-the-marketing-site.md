@@ -85,7 +85,7 @@ alert is whether the WAF actually stopped anything. Five `UNION SELECT` attempts
 seconds is unremarkable background noise on its own; the internet sprays that pattern at
 every public form constantly. What matters is what happened to the requests that carried it.
 
-```
+```text
 // WAF edge log, filtered to the alert's correlation ID
 2026-07-18T03:14:02Z host=trailrewards.cascadiaoutdoorgear.example rule=SQLI-UNION-002
 action=log-only status=200 src=203.0.113.10 path=/wp-admin/admin-ajax.php
@@ -142,7 +142,7 @@ every SQLi alert where the rule wasn't blocking, not just the flagged five.
 The analyst's first pull filtered the origin access log to the last twenty-four hours for
 the `admin-ajax.php` path generally:
 
-```
+```text
 // too broad — see next query
 grep "admin-ajax.php" access.log | grep "2026-07-1[78]"
 → 3,842 matching lines
@@ -157,7 +157,7 @@ every page load. Thirty-eight hundred lines told the analyst nothing.
 Narrowing to the source IP the WAF had logged, `203.0.113.10`, and the specific `qrp_`
 action prefix QuoteRequest Pro used:
 
-```
+```text
 grep "src=203.0.113.10" access.log | grep "action=qrp_" 
 → 41 matching lines, 2026-07-18T02:47:11Z through 2026-07-18T03:22:56Z
 ```
@@ -214,7 +214,7 @@ host confirms the file exists, when it was created, and what it contains. That m
 integrity monitoring (FIM) on the web server's document root, and the host's own EDR
 process-creation telemetry, covering the same window as the 03:14:02Z request.
 
-```
+```text
 // FIM alert queue, trailrewards-web-01, 2026-07-18
 2026-07-18T03:14:03Z FILE_CREATED path=/var/www/trailrewards/wp-content/uploads/2026/07/rate-cache.php
   owner=www-data mode=0644 size=1847
@@ -269,7 +269,7 @@ that was. The access log for requests to `/wp-content/uploads/2026/07/rate-cache
 itself, and the host's EDR process tree for `trailrewards-web-01` in the same window,
 answered whether it had been used.
 
-```
+```text
 // origin access log, filtered to the shell's own path
 2026-07-18T03:16:44Z src=203.0.113.10 method=GET path=/wp-content/uploads/2026/07/rate-cache.php?c=whoami status=200
 2026-07-18T03:16:58Z src=203.0.113.10 method=GET path=/wp-content/uploads/2026/07/rate-cache.php?c=id status=200
@@ -277,7 +277,7 @@ answered whether it had been used.
 2026-07-18T03:19:12Z src=203.0.113.10 method=GET path=/wp-content/uploads/2026/07/rate-cache.php?c=cat+/etc/passwd status=200
 ```
 
-```
+```text
 // EDR process-creation telemetry, trailrewards-web-01
 2026-07-18T03:16:44Z parent=apache2 child=/bin/sh -c whoami
 2026-07-18T03:16:58Z parent=apache2 child=/bin/sh -c id
@@ -313,7 +313,7 @@ designed to permit even in a worst case — or the attacker had already used the
 probe or reach further into the internal network, which would turn a single-host cleanup
 into a much larger incident.
 
-```
+```text
 // DMZ perimeter firewall log, trailrewards-web-01 (192.0.2.15), 2026-07-18 02:30–04:00Z
 2026-07-18T02:31:07Z src=192.0.2.15 dst=192.0.2.20 dport=3306 action=allow  // app DB, expected
 2026-07-18T02:30:00Z–04:00:00Z src=203.0.113.10 dst=192.0.2.15 dport=443 action=allow  // CDN edge traffic, expected

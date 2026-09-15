@@ -123,7 +123,7 @@ she actually owned.
 
 ### 3.1 The too-broad first query
 
-```
+```text
 // too broad — see next query
 SharePointAuditLog
 | where TimeGenerated between (datetime(2026-08-02) .. datetime(2026-08-31))
@@ -135,7 +135,7 @@ SharePointAuditLog
 Six thousand rows covering every account executive's ordinary quarter-end activity told the
 analyst nothing about Priya specifically. Narrowed to her user principal name:
 
-```
+```text
 SharePointAuditLog
 | where TimeGenerated between (datetime(2026-08-02) .. datetime(2026-08-31))
 | where Operation == "FileDownloaded"
@@ -201,7 +201,7 @@ slip — a shared password, a phished session, a departing employee's own accoun
 someone else entirely. Before attributing the August 22 session to Priya herself, the
 analyst pulled the Entra ID sign-in log for the same window.
 
-```
+```text
 // Entra ID sign-in log, panand@solvane.example, 2026-08-22
 2026-08-22T22:01:47Z result=success app="SharePoint Online" deviceId=LT-PANAND-04
   authMethod=push-MFA(device •7743) ip=198.51.100.23 location="Columbus, OH, US"
@@ -259,7 +259,7 @@ the same 30-day window from facilities.
 DLP log — the two channels `cloud-storage-upload-of-sensitive-data.md` and
 `personal-email-transfer-of-company-data.md` are each built to watch.
 
-```
+```text
 // CASB cloud-app log, personal-storage category, 2026-08-22
 2026-08-22T23:10:04Z user=panand@solvane.example device=LT-PANAND-04
   app="Google Drive (consumer)" action=upload object=Sales_Docs_Backup.zip
@@ -285,7 +285,7 @@ is T1567.002 (Exfiltration to Cloud Storage).
 
 ### 5.3 The email two days later
 
-```
+```text
 // Exchange Online mail-flow DLP log, 2026-08-24
 2026-08-24T15:47:29Z sender=panand@solvane.example recipient=p.anand.87@gmail.example
   subject="resources for later" attachments=3 sensitivity_label=Restricted
@@ -307,7 +307,7 @@ Webmail), attempted, not completed.
 **[ANALYST]** One vector remained on the checklist: removable storage. Solvane's endpoint DLP
 agent logs every mass-storage device attach event on managed laptops.
 
-```
+```text
 // Endpoint DLP, removable-media events, LT-PANAND-04, 2026-08-02–2026-08-31
 → 0 matching events
 ```

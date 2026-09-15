@@ -122,7 +122,7 @@ resolver log, both of which retain independently of the endpoint agent.
 
 ### 2.1 The too-broad first query
 
-```
+```text
 // firewall egress log, too broad — see next query
 grep "192.0.2.87" firewall.log | grep "2026-09-08"
 → 4,106 matching lines
@@ -134,11 +134,11 @@ day — Windows Update, the mail client, three internal line-of-business apps, t
 
 ### 2.2 The narrowed query
 
-```
+```text
 grep "192.0.2.87" firewall.log | grep "dport=3333"
 ```
 
-```
+```text
 2026-09-08T03:14:02Z action=allow proto=tcp src=192.0.2.87 sport=51774 dst=203.0.113.44 dport=3333 bytes_out=182 bytes_in=964 duration=61s
 2026-09-08T03:15:03Z action=allow proto=tcp src=192.0.2.87 sport=51774 dst=203.0.113.44 dport=3333 bytes_out=178 bytes_in=951 duration=61s
 2026-09-08T03:16:04Z action=allow proto=tcp src=192.0.2.87 sport=51774 dst=203.0.113.44 dport=3333 bytes_out=180 bytes_in=958 duration=61s
@@ -149,7 +149,7 @@ small-burst entry roughly every 60 seconds — share submissions on a stratum mi
 connection, not repeated reconnects. Port 3333 is a common stratum-protocol default. The DNS
 log showed the same story further back:
 
-```
+```text
 2026-08-19T14:08:22Z client=192.0.2.87 query=pool.oreblock.example qtype=A answer=203.0.113.44 ttl=300
 ```
 
@@ -166,7 +166,7 @@ predated the detection by weeks.
 ran it against the threat-intel platform — a five-minute check that is standard on any
 unfamiliar external IP, and one that briefly reopened the case in the wrong direction.
 
-```
+```text
 IOC: 203.0.113.44
 Tag: Cobalt Strike C2 — third-party feed, campaign "GRAYRIVER," confidence: medium
 First seen: 2025-02-11   Last seen: 2025-03-04
@@ -202,7 +202,7 @@ on *at the moment of the alert* couldn't settle attacker-versus-insider on its o
 was the fastest next check, and it ruled out one thing cleanly: whether someone was
 remotely operating the host live when the rule fired.
 
-```
+```text
 Event ID 4800
 2026-09-05T18:41:07Z  Account: pchandran  Workstation: CU-WKSTN-2231  Session locked
 ```
@@ -245,7 +245,7 @@ hypotheses. The disambiguating evidence, if it existed anywhere, was at the *ori
 the first time `xmrig.exe` ever ran on this host — which meant pivoting backward across the
 EDR's longer retention window instead of sideways to a new log source.
 
-```
+```text
 DeviceProcessEvents
 | where DeviceName == "CU-WKSTN-2231"
 | where FileName =~ "xmrig.exe" or ProcessCommandLine has "xmrig"
@@ -254,7 +254,7 @@ DeviceProcessEvents
 | take 5
 ```
 
-```
+```text
 2026-08-19T14:03:47Z FileCreated    Path=C:\Users\pchandran\Downloads\xmrig-6.21.3-msvc-win64.zip
   InitiatingProcess=msedge.exe
   URL=https://github.com/xmrig/xmrig/releases/download/v6.21.3/xmrig-6.21.3-msvc-win64.zip
@@ -274,7 +274,7 @@ own use, not the shape of a dropper hiding a foothold.
 
 That still left the identity question. The Security log for the same window:
 
-```
+```text
 2026-08-19T13:47:22Z Badge: P.CHANDRAN (EMP-30142)  Reader: HQ-2F-EAST-TURNSTILE  Result: GRANTED
 2026-08-19T13:52:04Z Event ID 4624  Account: pchandran  Logon Type: 2 (Interactive)
   Workstation: CU-WKSTN-2231  Source Network Address: 127.0.0.1

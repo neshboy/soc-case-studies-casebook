@@ -88,7 +88,7 @@ same six-minute window? Those two business functions at Larchmont Freight didn't
 infrastructure, didn't share a helpdesk queue, and — as far as Priya knew off the top of her
 head — didn't share a single application that would make one host need to reach both.
 
-```
+```text
 // firewall connection log, filtered to the alert's correlation window
 2026-07-09T02:14:02Z src=192.0.2.45 dst=198.51.100.14  dport=445 proto=tcp flags=SYN
 2026-07-09T02:14:02Z src=192.0.2.45 dst=198.51.100.15  dport=445 proto=tcp flags=SYN
@@ -133,7 +133,7 @@ name.
 Priya's first pull was a straight count of everything from `192.0.2.45` on port 445 in the
 last 24 hours, to get a sense of scale before narrowing:
 
-```
+```text
 // too broad — see next query
 src=192.0.2.45 AND dport=445 | last 24h
 → 2,915 matching connection log lines
@@ -150,7 +150,7 @@ targets, and it wasn't scoped to the alert's own window.
 Narrowing to distinct destination IPs within the alert's actual 02:14:02Z–02:19:42Z window
 gave the number that mattered:
 
-```
+```text
 src=192.0.2.45 AND dport=445 | 02:14:02Z–02:19:42Z | dedup by dst
 → 214 distinct destination IPs, 1,140 total connection attempts
 ```
@@ -197,7 +197,7 @@ turned into someone else's tool" needed host-level evidence: what was actually r
 `VMSCAN-03`, and whether the traffic pattern on the wire looked like a scan job or an
 exploitation attempt.
 
-```
+```text
 // EDR process telemetry, VMSCAN-03, 2026-07-09T02:12–02:22Z
 2026-07-09T02:12:58Z parent=svc_scanhost.exe child=scan_worker.exe --job=weekly-sweep-disabled
 2026-07-09T02:13:04Z parent=scan_worker.exe child=smb_probe.exe --mode=fingerprint
@@ -214,7 +214,7 @@ specifically for Event ID 4624 with a network logon type, to see whether any con
 gone past the SMB dialect negotiation into an actual authentication attempt — the detail that
 would separate a fingerprinting probe from something trying to get in.
 
-```
+```text
 // Security event log, sample target 198.51.100.14, window 02:13:55Z-02:14:10Z
 (no Event ID 4624 entries in window; SMB session table shows negotiate-only, no session setup)
 ```

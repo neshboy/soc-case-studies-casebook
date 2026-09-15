@@ -76,7 +76,7 @@ raises the floor on how carefully every anomaly on that account gets reviewed. T
 SOC analyst — solo on shift, no Tier 2 backup until 07:00 UTC — picked up the ticket at
 04:52 UTC.
 
-```
+```text
 Alert: Impossible Travel — Concurrent Sign-Ins (Critical/P1)
 Account: dvoss@aldergatemutual.example
 Escalation reason: Account holds Global Administrator role
@@ -92,7 +92,7 @@ playbook already has a name for" — the VPN-egress-plus-mobile-carrier-NAT patt
 `CLD-007`'s own case notes, where two geo-buckets disagree but the authentication factors
 tell one consistent story. The analyst pulled both sign-in events in full.
 
-```
+```text
 SigninLogs
 | where TimeGenerated between (datetime(2026-09-14T03:30:00Z) .. datetime(2026-09-14T05:00:00Z))
 | where UserPrincipalName == "dvoss@aldergatemutual.example"
@@ -173,7 +173,7 @@ available, precisely because it's a common attacker persistence step
 **[PIVOT]** The audit trail for MFA/security-info changes lives in Entra ID's directory
 audit log, not the sign-in log this investigation had been living in up to this point.
 
-```
+```text
 AuditLogs
 | where TimeGenerated > ago(14d)
 | where OperationName == "Register security info"
@@ -183,7 +183,7 @@ AuditLogs
 
 Narrowed to the one account:
 
-```
+```text
 AuditLogs
 | where TimeGenerated > ago(14d)
 | where OperationName == "Register security info"
@@ -325,7 +325,7 @@ resolve this cleanly toward compromise regardless of the travel-timing ambiguity
 follow-on tenant activity consistent with an attacker actually doing something with access,
 per `EML-012`'s own investigation steps.
 
-```
+```text
 // Unified Audit Log — mailbox and directory actions in the 12 hours following sign-in 2
 Search-UnifiedAuditLog -StartDate 2026-09-14T04:41:00Z -EndDate 2026-09-14T16:41:00Z
   -UserIds dvoss@aldergatemutual.example
