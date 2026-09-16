@@ -1,0 +1,12 @@
+The SOC Case Studies Casebook. Nineteen full investigations. Free. Public.
+
+A closed case isn't an investigation. The investigation is everything that happened before the disposition field got filled in.
+
+Alert → first look → the question that sends you to a second log source → the pivot that pays off → the one that doesn't → a hypothesis that loses → a confidence level that moves as evidence comes in → a decision, or the honest admission the evidence won't support one yet.
+
+Inside: password spraying, BEC wire fraud, a ransomware precursor mistaken for a failed backup, cloud access-key leakage, insider exfiltration, DCSync, a web shell behind a marketing site, QR-code phishing, AI-agent tool abuse — and the false positives and dead ends none of that ever survives into a conference talk.
+
+Nineteen cases, five honest outcome flavors — obvious true positives, subtle ones that only resolve once sources combine, benign positives, confirmed false positives, and cases that close Inconclusive on a stated confidence and a real "What Would Change My Mind," never a manufactured clean ending. Dead End and False Lead callouts mark the moves that went nowhere, on purpose, because that's what the job actually looks like.
+
+Full PDF: https://raw.githubusercontent.com/neshboy/soc-case-studies-casebook/master/SOC_Case_Studies_Casebook.pdf
+Repo: https://github.com/neshboy/soc-case-studies-casebook
