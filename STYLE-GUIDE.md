@@ -1,6 +1,6 @@
 # The SOC Case Studies Casebook — STYLE-GUIDE.md
 
-**Status:** Adopted for Volume 4 of the NESHBOY SOC Professional Library, adapted from the Detection Engineering Handbook V2 `STYLE-GUIDE.md` and the SOC Manager's Operating Handbook `STYLE-GUIDE.md` for series consistency.
+**Status:** Adopted for the NESHBOY SOC Professional Library, adapted from the Detection Engineering Handbook V2 `STYLE-GUIDE.md` and the SOC Manager's Operating Handbook `STYLE-GUIDE.md` for series consistency.
 **Applies to:** every case file, appendix, and figure in this book.
 **Audience:** every writer, technical reviewer, and editor working on this book.
 

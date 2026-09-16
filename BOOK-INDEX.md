@@ -1,7 +1,7 @@
 # The SOC Case Studies Casebook
 
 **BOOK-INDEX.md — canonical case list for the architecture pass.**
-**Status:** Proposed architecture, not yet drafted. Volume 4 of the NESHBOY SOC Professional Library, sitting alongside the SOC Playbook Handbook, the Detection Engineering Handbook V2, and the SOC Manager's Operating Handbook.
+**Status:** Proposed architecture, not yet drafted. Part of the NESHBOY SOC Professional Library, sitting alongside the SOC Playbook Handbook, the Detection Engineering Handbook V2, and the SOC Manager's Operating Handbook.
 
 ## What this book is
 

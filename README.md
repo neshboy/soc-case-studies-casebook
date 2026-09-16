@@ -4,7 +4,7 @@
 
 📄 **[Download the full PDF](./SOC_Case_Studies_Casebook.pdf)** — 196 pages, ~73,000 words across 19 cases in 7 categories.
 
-Volume 4 of the **NESHBOY SOC Professional Library**, alongside [SIGNAL TO ACTION: The Complete SOC Playbook Handbook](https://github.com/neshboy/soc-playbook-handbook), [The Detection Engineering Handbook V2](https://github.com/neshboy/detection-engineering-handbook), and [The SOC Manager's Operating Handbook](https://github.com/neshboy/soc-manager-handbook).
+Part of the **NESHBOY SOC Professional Library**, alongside [SIGNAL TO ACTION: The Complete SOC Playbook Handbook](https://github.com/neshboy/soc-playbook-handbook), [The Detection Engineering Handbook V2](https://github.com/neshboy/detection-engineering-handbook), and [The SOC Manager's Operating Handbook](https://github.com/neshboy/soc-manager-handbook).
 
 Every other volume in this series either dissects one alert at a time (the SOC Playbook Handbook's case-study companions: one alert, one evidence table, one disposition, roughly 600–900 words) or compresses a multi-stage attack chain into a technical model written in the detection engineer's voice (Detection Engineering Handbook V2 Parts 44–48: cross-plane correlation logic with a worked example folded into one subsection). Neither reads like an actual investigation notebook: alert, first look, the questions an analyst asks before touching a second data source, the pivot that pays off, the one that doesn't, a stated hypothesis that loses, a confidence level that moves as evidence comes in, and a decision. This book is that notebook, nineteen times, each case substantial enough (3,000–6,000 words) to earn its own file and its own place in the series' cross-reference graph.
 
